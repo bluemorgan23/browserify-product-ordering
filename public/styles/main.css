@@ -1,0 +1,29 @@
+:root {
+    --taco: red;
+}
+
+body {
+    background-color: lightcyan
+}
+
+#navBar {
+    display: flex;
+    color: var(--taco);
+    justify-content: space-around;
+}
+
+section {
+    text-align: center;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+img {
+    max-width: 40%;
+    max-height: 40%;
+}
+
+
+
