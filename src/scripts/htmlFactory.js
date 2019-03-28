@@ -10,6 +10,14 @@ const htmlFactory = {
             newElement.id = id;
         }
         return newElement;
+    },
+    HTMLforProduct: (productObject) => {
+        const productContainer = htmlFactory.createHtmlElement("section", undefined, `productContainer--${productObject.id}`);
+        productContainer.appendChild(htmlFactory.createHtmlElement("h3", productObject.name));
+        productContainer.appendChild(htmlFactory.createHtmlElement("p", productObject.description));
+        productContainer.appendChild(htmlFactory.createHtmlElement("p", productObject.price));
+        productContainer.appendChild(htmlFactory.createHtmlElement("p", productObject.quantity));
+        return productContainer;
     }
 }
 
