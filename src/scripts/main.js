@@ -1,1 +1,3 @@
-console.log("hello");
+import navBarModule from "./navBar"
+
+navBarModule.createNavBar();

@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "name": "Sleeping Bag",
+            "description": "15 degree down sleeping bag",
+            "price": 115.00,
+            "quantity": 2
+        },
+        {
+            "name": "Climbing Shoes",
+            "description": "Size 10 Climbing Shoes",
+            "price": 80.00,
+            "quantity": 5
+        },
+        {
+            "name": "Backpack",
+            "description": "40L Backpack",
+            "price": 150.00,
+            "quantity": 4
+        },
+        {
+            "name": "Tent",
+            "description": "2-person Tent",
+            "price": 200.00,
+            "quantity": 1
+        }
+    ]
+}
