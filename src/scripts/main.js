@@ -1,5 +1,5 @@
 import navBarModule from "./navBar"
-import API from "./productData"
+import API from "./data"
 import productModule from "./product"
 import reviewMODULE from "./reviewList"
 
