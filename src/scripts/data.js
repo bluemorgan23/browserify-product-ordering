@@ -1,14 +1,10 @@
 //This component includes methods that deal with the data in my database
 
-const url = "http://localhost:8088/products"
+const baseUrl = "http://localhost:8088"
 
 const API = {
-    getProducts: () => {
-        return fetch(url).then(response => response.json());
-    },
-    getProductNames: () => {
-        const justNames = API.getProducts().then(productArray => productArray.map(product => product.name))
-        return justNames;
+    getProductsAndReviews: () => {
+        return fetch(`${baseUrl}/productAndReviews?_expand=product&_expand=review`).then(response => response.json());
     }
 }
 

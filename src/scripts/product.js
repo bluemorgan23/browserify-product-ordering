@@ -2,14 +2,18 @@
 import htmlFactory from "./htmlFactory"
 import API from "./data";
 
-const displayContainer = document.querySelector("#display-container")
+let displayContainer = document.querySelector("#display-container")
+
+
 
 const productModule = {
     listProducts: () => {
-        API.getProducts().then(productArray => {
-            productArray.forEach(product => displayContainer.appendChild(htmlFactory.HTMLforProduct(product)))
+        const allProductsContainer = document.createElement("div");
+        allProductsContainer.setAttribute("id", "products");
+        API.getProductsAndReviews().then(productArray => {
+            productArray.forEach(product => allProductsContainer.appendChild( htmlFactory.HTMLforProduct(product)))
         })
-        return displayContainer;
+        return allProductsContainer;
     }
 }
 

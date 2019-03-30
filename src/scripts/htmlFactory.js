@@ -1,12 +1,13 @@
 // This file contains the module that contains the methods that deal with creating HTML.
-import reviewAPI from "./reviewData"
+// import API from "./data"
+import reviewList from "./reviewList"
 
-const isMatch = (array, match) => {
-    return array.product === match;
-}
+const sayHi = () => {
+    return console.log("hello")
+};
 
 const htmlFactory = {
-    createHtmlElement: (element, text, id, href, src) => {
+    createHtmlElement: (element, text, id, href, src, className) => {
         const newElement = document.createElement(element);
         if(text){
             newElement.textContent = text;
@@ -20,6 +21,9 @@ const htmlFactory = {
         if(src){
             newElement.setAttribute("src", src)
         }
+        if(className){
+            newElement.setAttribute("class", className)
+        }
         return newElement;
     },
     clearElement: (element) => {
@@ -29,31 +33,25 @@ const htmlFactory = {
         return element;
     },
     HTMLforProduct: (productObject) => {
-        const productContainer = htmlFactory.createHtmlElement("section", undefined, `productContainer--${productObject.id}`);
-        productContainer.appendChild(htmlFactory.createHtmlElement("h2", productObject.name));
-        productContainer.appendChild(htmlFactory.createHtmlElement("img", undefined, `image--${productObject.id}`, undefined, productObject.image));
-        productContainer.appendChild(htmlFactory.createHtmlElement("h4", productObject.description));
-        productContainer.appendChild(htmlFactory.createHtmlElement("p", `$${productObject.price}`));
-        productContainer.appendChild(htmlFactory.createHtmlElement("p", `Quantity Available: ${productObject.quantity}`));
-        const seeReviewButton = productContainer.appendChild(htmlFactory.createHtmlElement("button", "See Reviews", "review-button"));
-        seeReviewButton.addEventListener("click", htmlFactory.HTMLforReview);
-        productContainer.innerHTML += "<hr/>"
+        const productContainer = htmlFactory.createHtmlElement("div", undefined, `productContainer--${productObject.id}`, undefined, undefined, "card mb-1");
+        productContainer.appendChild(htmlFactory.createHtmlElement("h5", productObject.product.productName, undefined, undefined, undefined, "card-header"));
+        productContainer.appendChild(htmlFactory.createHtmlElement("img", undefined, `image--${productObject.id}`, undefined, productObject.product.image, "card-img"));
+        const cardContainer = productContainer.appendChild(htmlFactory.createHtmlElement("div"));
+        cardContainer.setAttribute("class", "card-body");
+        cardContainer.setAttribute("width", "18rem;")
+        cardContainer.appendChild(htmlFactory.createHtmlElement("h4", productObject.product.description, undefined, undefined, undefined, "card-subtitle mb-3 text-muted"));
+        cardContainer.appendChild(htmlFactory.createHtmlElement("p", `$${productObject.product.price}`, undefined, undefined, undefined, "card-text"));
+        cardContainer.appendChild(htmlFactory.createHtmlElement("p", `Quantity Available: ${productObject.product.quantity}`));
+        const seeReviewButton = cardContainer.appendChild(htmlFactory.createHtmlElement("a", "See Reviews", "btn_link", "", undefined, "btn btn-info btn-large btn-block"))
+        seeReviewButton.setAttribute("data-toggle", "button");
+        seeReviewButton.addEventListener("click", function(){
+            htmlFactory.clearElement(productContainer);
+            productContainer.appendChild(reviewList.reviewList(productObject));
+        });
+
         return productContainer;
-    },
-    HTMLforReview: (event) => {
-        const reviewContainer = event.target.parentNode;
-        const textToMatch = reviewContainer.firstChild.textContent;
-        const matchedReview = reviewAPI.getReviews().then(reviewArray => reviewArray.find(isMatch(reviewArray, textToMatch))).then(() => htmlFactory.clearElement(reviewContainer));
-        reviewContainer.appendChild(htmlFactory.createHtmlElement("h5", matchedReview.userName));
-        reviewContainer.appendChild(htmlFactory.createHtmlElement("p", matchedReview.starRating));
-        reviewContainer.appendChild(htmlFactory.createHtmlElement("p", matchedReview.date));
-        reviewContainer.appendChild(htmlFactory.createHtmlElement("p", matchedReview.review));
-        reviewContainer.appendChild(htmlFactory.createHtmlElement("button", "Go Back to Product", "review-return", undefined))
-
-        return reviewContainer;
-
     }
 }
 
 
-export default htmlFactory;
+export default htmlFactory

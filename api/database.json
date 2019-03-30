@@ -1,60 +1,87 @@
 {
-    "products": [
+    "productAndReviews": [
         {
-            "name": "Sleeping Bag",
-            "description": "15 degree down sleeping bag",
-            "price": 115.00,
-            "quantity": 2,
-            "image": "images/sleeping-bag.jpg",
-            "reviewInfo": {
-                "userName": "Mary",
-                "date": "03-23-2017",
-                "starRating": "4/5",
-                "review": "Jean shorts health goth tofu bicycle rights. Vice chicharrones chillwave ugh food truck viral. Street art kitsch cray, humblebrag cornhole poke drinking vinegar shaman intelligentsia tbh. Tilde 8-bit heirloom, ugh locavore tumblr trust fund four dollar toast adaptogen af stumptown ennui pinterest craft beer. Biodiesel normcore food truck hashtag. Sriracha enamel pin kale chips, mlkshk XOXO offal quinoa church-key post-ironic biodiesel keytar fixie pop-up.",
-            "product": "Sleeping Bag"
-            },
+            "productId": 3,
+            "reviewId": 2,
             "id": 1
         },
         {
-            "name": "Climbing Shoes",
-            "description": "Size 10 Climbing Shoes",
-            "price": 80.00,
-            "quantity": 5,
-            "image": "images/climbing-shoes.jpg",
-            "reviewInfo": {
-                "userName": "Jerry",
-                "date": "04-01-2019",
-                "starRating": "3/5",
-                "review": "Chambray etsy squid literally meh beard live-edge pickled jean shorts. Blue bottle stumptown neutra, adaptogen farm-to-table microdosing thundercats food truck semiotics swag ramps tumeric scenester etsy pitchfork. Next level tote bag swag letterpress wolf flexitarian scenester raclette kitsch 90's four dollar toast freegan. +1 yr pinterest aesthetic bushwick, vinyl chicharrones."
-            },
+            "productId": 2,
+            "reviewId": 1,
             "id": 2
         },
         {
-            "name": "Backpack",
-            "description": "40L Backpack",
-            "price": 150.00,
-            "quantity": 4,
-            "image": "images/backpack.jpg",
-            "reviewInfo": {
-                "userName": "April",
-                "date": "10-27-2018",
-                "starRating": "3/5",
-                "review": "Actually PBR&B lo-fi street art health goth locavore. Portland glossier deep v master cleanse, retro iPhone you probably haven't heard of them neutra quinoa. Cred bicycle rights hot chicken ethical scenester bespoke mustache celiac. Scenester mustache sartorial jianbing, truffaut knausgaard subway tile next level quinoa tumblr. Williamsburg green juice woke pok pok drinking vinegar. Synth woke flannel tumblr occupy."
-            },
+            "productId": 4,
+            "reviewId": 4,
             "id": 3
         },
         {
-            "name": "Tent",
+            "productId": 1,
+            "reviewId": 3,
+            "id": 4
+        }
+    ],
+    "reviews": [
+        {
+            "id": 1,
+            "userName": "Tom",
+            "date": "05-12-2018",
+            "starRating": "2/5",
+            "review": "Enamel pin ugh slow-carb chicharrones seitan health goth wayfarers master cleanse occupy next level messenger bag. Post-ironic intelligentsia tousled mustache everyday carry, selvage +1 8-bit slow-carb godard trust fund jean shorts pitchfork synth hexagon. Viral yuccie skateboard cloud bread drinking vinegar. Flannel kinfolk PBR&B succulents vinyl chartreuse, neutra thundercats activated charcoal mixtape scenester."
+        },
+        {
+            "id": 2,
+            "userName": "April",
+            "date": "10-27-2018",
+            "starRating": "3/5",
+            "review": "Actually PBR&B lo-fi street art health goth locavore. Portland glossier deep v master cleanse, retro iPhone you probably haven't heard of them neutra quinoa. Cred bicycle rights hot chicken ethical scenester bespoke mustache celiac. Scenester mustache sartorial jianbing, truffaut knausgaard subway tile next level quinoa tumblr. Williamsburg green juice woke pok pok drinking vinegar. Synth woke flannel tumblr occupy."
+        },
+        {
+            "id": 3,
+            "userName": "Jerry",
+            "date": "04-01-2019",
+            "starRating": "3/5",
+            "review": "Chambray etsy squid literally meh beard live-edge pickled jean shorts. Blue bottle stumptown neutra, adaptogen farm-to-table microdosing thundercats food truck semiotics swag ramps tumeric scenester etsy pitchfork. Next level tote bag swag letterpress wolf flexitarian scenester raclette kitsch 90's four dollar toast freegan. +1 yr pinterest aesthetic bushwick, vinyl chicharrones."
+        },
+        {
+            "id": 4,
+            "userName": "Mary",
+            "date": "03-23-2017",
+            "starRating": "4/5",
+            "review": "Jean shorts health goth tofu bicycle rights. Vice chicharrones chillwave ugh food truck viral. Street art kitsch cray, humblebrag cornhole poke drinking vinegar shaman intelligentsia tbh. Tilde 8-bit heirloom, ugh locavore tumblr trust fund four dollar toast adaptogen af stumptown ennui pinterest craft beer. Biodiesel normcore food truck hashtag. Sriracha enamel pin kale chips, mlkshk XOXO offal quinoa church-key post-ironic biodiesel keytar fixie pop-up."
+        }
+    ],
+    "products": [
+        {
+            "productName": "Tent",
             "description": "2-person Tent",
+            "image": "images/tent.jpg",
             "price": 200.00,
             "quantity": 1,
-            "image": "images/tent.jpg",
-            "reviewInfo": {
-                "userName": "Tom",
-                "date": "05-12-2018",
-                "starRating": "2/5",
-                "review": "Enamel pin ugh slow-carb chicharrones seitan health goth wayfarers master cleanse occupy next level messenger bag. Post-ironic intelligentsia tousled mustache everyday carry, selvage +1 8-bit slow-carb godard trust fund jean shorts pitchfork synth hexagon. Viral yuccie skateboard cloud bread drinking vinegar. Flannel kinfolk PBR&B succulents vinyl chartreuse, neutra thundercats activated charcoal mixtape scenester."
-            },
+            "id": 1
+        },
+        {
+            "productName": "Climbing Shoes",
+            "description": "Size 10 Climbing Shoes",
+            "image": "images/climbing-shoes.jpg",
+            "price": 80.00,
+            "quantity": 5,
+            "id": 2
+        },
+        {
+            "productName": "Sleeping Bag",
+            "description": "15 degree down sleeping bag",
+            "image": "images/sleeping-bag.jpg",
+            "price": 115.00,
+            "quantity": 2,
+            "id": 3
+        },
+        {
+            "productName": "Backpack",
+            "description": "40L Backpack",
+            "image": "images/backpack.jpg",
+            "price": 150.00,
+            "quantity": 4,
             "id": 4
         }
     ]
