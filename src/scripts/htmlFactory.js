@@ -33,6 +33,7 @@ const htmlFactory = {
         return element;
     },
     HTMLforProduct: (productObject) => {
+        const bigContainer = document.querySelector("#products");
         const productContainer = htmlFactory.createHtmlElement("div", undefined, `productContainer--${productObject.id}`, undefined, undefined, "card mb-1");
         productContainer.appendChild(htmlFactory.createHtmlElement("h5", productObject.product.productName, undefined, undefined, undefined, "card-header"));
         productContainer.appendChild(htmlFactory.createHtmlElement("img", undefined, `image--${productObject.id}`, undefined, productObject.product.image, "card-img"));
@@ -45,8 +46,7 @@ const htmlFactory = {
         const seeReviewButton = cardContainer.appendChild(htmlFactory.createHtmlElement("a", "See Reviews", "btn_link", "", undefined, "btn btn-info btn-large btn-block"))
         seeReviewButton.setAttribute("data-toggle", "button");
         seeReviewButton.addEventListener("click", function(){
-            htmlFactory.clearElement(productContainer);
-            productContainer.appendChild(reviewList.reviewList(productObject));
+            reviewList.reviewList(productObject);
         });
 
         return productContainer;
